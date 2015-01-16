@@ -52,7 +52,7 @@ function verify_max_args() {
 function sanitize_name() {
 	local NAME="$1"
 	[[ "$NAME" == "" ]] && fail "You must specify an $2"
-	local NAME2="${NAME//[^a-zA-Z0-9_-]//}"
+	local NAME2="${NAME//[^a-zA-Z0-9_.-]//}"
 	[[ "$NAME" != "$NAME2" ]] && fail "Invalid $2"
 	return 0
 }
